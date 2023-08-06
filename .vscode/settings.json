@@ -1,3 +1,7 @@
 {
-    "dotnet.defaultSolution": "DatingApp.sln"
+    "dotnet.defaultSolution": "DatingApp.sln",
+    "dotnet_code_quality.useEditorConfig": true,
+    "editor.codeActionsOnSave": {
+      "source.fixAll": true
+    }    
 }

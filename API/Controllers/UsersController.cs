@@ -10,23 +10,23 @@ namespace API.Controllers;
 [Route("api/[controller]")] //api/users
 public class UsersController : ControllerBase
 {
-    private readonly DataContext _dataContext;
+    private readonly DataContext _DataContext;
     public UsersController(DataContext dataContext)
     {
-        _dataContext = dataContext;
+        _DataContext = dataContext;
     }
 
     [HttpGet]
     public async Task<ActionResult<IEnumerable<User>>> GetUsers()
     {
-        var users = await _dataContext.Users.ToListAsync();
+        var users = await _DataContext.Users.ToListAsync();
         return Ok(users);
     }
 
     [HttpGet("{id}")]
     public async Task<ActionResult<User>> GetUser(int id)
     {
-        var user = await _dataContext.Users.FindAsync(id);
+        var user = await _DataContext.Users.FindAsync(id);
         return Ok(user);
     }
 }
